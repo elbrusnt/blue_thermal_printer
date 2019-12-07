@@ -393,7 +393,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
 
     try {
 	    //StandardCharsets.UTF_8
-      THREAD.write(message.getBytes("UTF8"));
+      THREAD.write(message.getBytes(StandardCharsets.UTF_8));
       result.success(true);
     } catch (Exception ex) {
       Log.e(TAG, ex.getMessage(), ex);
@@ -462,7 +462,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
           THREAD.write(PrinterCommands.ESC_ALIGN_RIGHT);
           break;
       }
-      THREAD.write(message.getBytes("UTF8"));
+      THREAD.write(message.getBytes(StandardCharsets.UTF_8));
       THREAD.write(PrinterCommands.FEED_LINE);
       result.success(true);
     } catch (Exception ex) {
@@ -502,7 +502,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
       }
       THREAD.write(PrinterCommands.ESC_ALIGN_CENTER);
       String line = String.format("%-15s %15s %n", msg1, msg2);
-      THREAD.write(line.getBytes("UTF8"));
+      THREAD.write(line.getBytes(StandardCharsets.UTF_8));
       result.success(true);
     } catch (Exception ex) {
       Log.e(TAG, ex.getMessage(), ex);
