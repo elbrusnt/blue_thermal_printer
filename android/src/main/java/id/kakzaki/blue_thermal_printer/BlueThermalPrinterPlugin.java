@@ -393,7 +393,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
 
     try {
 	    //StandardCharsets.UTF_8
-      THREAD.write(message.getBytes("UTF8");
+      THREAD.write(message.getBytes("UTF8"));
       result.success(true);
     } catch (Exception ex) {
       Log.e(TAG, ex.getMessage(), ex);
