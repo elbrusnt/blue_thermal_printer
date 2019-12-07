@@ -31,6 +31,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import java.io.Writer
+import java.io.OutputStreamWriter;
+
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.EventChannel.StreamHandler;
 import io.flutter.plugin.common.EventChannel.EventSink;
@@ -634,7 +637,9 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
 
     public void write(byte[] bytes) {
       try {
+	//Writer writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"));
         outputStream.write(bytes);
+	//writer.close();
       } catch (IOException e) {
         e.printStackTrace();
       }
