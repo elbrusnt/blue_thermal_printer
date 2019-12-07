@@ -612,7 +612,8 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
         e.printStackTrace();
       }
       inputStream = tmpIn;
-      outputStream = tmpOut;
+      //outputStream = tmpOut;
+      outputStream = new BufferedWriter(new OutputStreamWriter(tmpOut, "UTF8"));
     }
 
     public void run() {
